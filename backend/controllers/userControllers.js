@@ -12,7 +12,7 @@ const registerUser = asyncHandler(async (req, res) => {
     const {name, email, password } = req.body;
     
     // to check if user exists
-    const userExists = await UserActivation.findOne({email});
+    const userExists = await User.findOne({email});
 
     if(userExists) {
         res.status(400);
